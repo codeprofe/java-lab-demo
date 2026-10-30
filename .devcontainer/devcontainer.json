@@ -1,0 +1,34 @@
+
+{
+  "name": "Java Spring Boot Lab",
+  "image": "maven:3.9-eclipse-temurin-25",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "redhat.java",
+        "vscjava.vscode-java-pack",
+        "vmware.vscode-spring-boot"
+      ]
+    }
+  },
+  "forwardPorts": [8080],
+  "shutdownAction": "stopContainer"
+}
+// {
+//   "name": "Java Spring Boot Lab",
+//   "image": "maven:3.9-eclipse-temurin-21-alpine",
+//   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+//   "customizations": {
+//     "vscode": {
+//       "extensions": [
+//         "redhat.java",
+//         "vscjava.vscode-java-pack",
+//         "vmware.vscode-spring-boot"
+//       ]
+//     }
+//   },
+//   "forwardPorts": [8080],
+//   "shutdownAction": "stopContainer"
+// }
+
