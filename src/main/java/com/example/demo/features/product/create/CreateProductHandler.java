@@ -5,15 +5,13 @@ import org.springframework.stereotype.Service;
 import com.example.demo.features.product.domain.ProductRepository;
 import com.example.demo.features.product.domain.Producto;
 
+import lombok.RequiredArgsConstructor;
+
 @Service 
+@RequiredArgsConstructor 
 public class CreateProductHandler {
 
-    private ProductRepository productRepository;
-    
-    public CreateProductHandler(ProductRepository repo) {
-        this.productRepository = repo;
-    }
-
+    private final ProductRepository productRepository;
     
     public Producto handle(Producto nuevoProducto){
        

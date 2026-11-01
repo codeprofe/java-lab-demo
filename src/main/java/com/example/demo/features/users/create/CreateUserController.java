@@ -1,28 +1,22 @@
 package com.example.demo.features.users.create;
 
 import org.springframework.web.bind.annotation.RestController;
-
-
-import org.springframework.web.bind.annotation.RequestMapping;
-
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import lombok.RequiredArgsConstructor;
 
+import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @RestController 
 @RequestMapping("/api/users")
+@RequiredArgsConstructor 
 public class CreateUserController {
 
-    CreateUserHandler handler;
+    private final CreateUserHandler handler;
 
-    public CreateUserController(CreateUserHandler handler){
-        this.handler = handler;
-    }
-    
     @PostMapping 
     public ResponseEntity<UserResponse> getAllUsers(@RequestBody CreateUserCommand command) {
         

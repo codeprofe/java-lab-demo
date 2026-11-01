@@ -7,16 +7,13 @@ import org.springframework.stereotype.Service;
 import com.example.demo.features.product.domain.ProductRepository;
 import com.example.demo.features.product.domain.Producto;
 
+import lombok.RequiredArgsConstructor;
+
 @Service 
+@RequiredArgsConstructor 
 public class GetAllProductHandler {
     
-    private ProductRepository productRepository;
-
-
-
-    public GetAllProductHandler(ProductRepository repo) {
-        this.productRepository = repo;
-    }
+    private final ProductRepository productRepository;
 
     public Stream<Producto> handle(){
         return productRepository.findAll().stream();

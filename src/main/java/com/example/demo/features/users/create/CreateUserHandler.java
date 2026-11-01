@@ -21,6 +21,7 @@ public class CreateUserHandler {
     public UserResponse handle(CreateUserCommand command) {
 
         User user = new User(
+            null,
             command.userName(),
             command.email(),
             command.password()

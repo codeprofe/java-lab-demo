@@ -8,17 +8,13 @@ import org.springframework.stereotype.Service;
 import com.example.demo.features.product.domain.Producto;
 import com.example.demo.features.product.domain.SearchByPriceRepository;
 
-@Service 
+import lombok.RequiredArgsConstructor;
 
+@Service 
+@RequiredArgsConstructor 
 public class SearchByPriceHandler {
 
-    SearchByPriceRepository productRepository;
-
-    public SearchByPriceHandler(SearchByPriceRepository repo) {
-        productRepository = repo;
-
-    }
-
+    private final SearchByPriceRepository productRepository;
 
     Stream<Producto> handle(BigDecimal price){
         return productRepository.searchByPrice(price).stream();

@@ -7,20 +7,16 @@ import org.springframework.stereotype.Service;
 import com.example.demo.features.product.domain.ProductRepository;
 import com.example.demo.features.product.domain.Producto;
 
+import lombok.RequiredArgsConstructor;
+
 @Service 
+@RequiredArgsConstructor 
 public class GetProductByIdHandler {
     
-    private ProductRepository productRepository;
-
-
-
-    public GetProductByIdHandler(ProductRepository repo) {
-        this.productRepository = repo;
-    }
+    private final ProductRepository productRepository;
 
     public Optional<Producto> handle(Long id){
         return productRepository.findById(id);
     }
-
 
 }

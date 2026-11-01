@@ -6,15 +6,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import lombok.RequiredArgsConstructor;
+
 @RestController 
 @RequestMapping("/api/product")
+@RequiredArgsConstructor 
 public class DeleteProductController {
 
-    DeleteProductHandler handler;
-
-    public DeleteProductController(DeleteProductHandler handler) {
-        this.handler = handler;
-    }
+    private final DeleteProductHandler handler;
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id){

@@ -5,9 +5,17 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity 
 @Table(name = "products")
+@Setter 
+@Getter 
+@NoArgsConstructor 
+@AllArgsConstructor 
 public class Producto{
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,34 +24,5 @@ public class Producto{
     private String titulo;
     private Double precio;
 
-    public Producto(){}
 
-    public Producto(String titulo, Double precio){
-        this.titulo = titulo;
-        this.precio = precio;
-    }
-
-    public Long getId(){
-        return this.id;
-    }
-
-    public void setId(Long id){
-        this.id = id;
-    }
-
-    public String getTitulo(){
-        return this.titulo;
-    }
-
-    public void setTitulo(String titulo){
-        this.titulo = titulo;
-    }
-
-    public Double getPrecio(){
-        return this.precio;
-    }
-
-    public void setPrecio(Double precio){
-        this.precio = precio;
-    }
 }

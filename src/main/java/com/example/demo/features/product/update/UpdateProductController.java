@@ -23,7 +23,10 @@ public class UpdateProductController {
 
     @PutMapping("/{id}")
     public ResponseEntity<UpdateProductResponse> actualizarProducto(@PathVariable Long id, @RequestBody UpdateProductResquest actualizado) { 
-        return handler.handle(id, new Producto(actualizado.title(),actualizado.price()) )
+        if (actualizado == null){
+            ResponseEntity.badRequest().body("Los datos del producto no son validos!");
+        }
+        return handler.handle(id, new Producto(null,actualizado.title(),actualizado.price()) )
                     .map(UpdateProductResponse::fromEntity)
                     .map(ResponseEntity::ok)
                     .orElse(ResponseEntity.notFound().build());

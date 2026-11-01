@@ -4,13 +4,12 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.features.product.domain.ProductRepository;
 
+import lombok.RequiredArgsConstructor;
+
 @Service 
+@RequiredArgsConstructor 
 public class DeleteProductHandler {
     private ProductRepository productRepository;
-
-    public DeleteProductHandler(ProductRepository repo) {
-        this.productRepository = repo;
-    }
     
     public boolean handle(Long id){
         if (productRepository.existsById(id)){

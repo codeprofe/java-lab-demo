@@ -6,15 +6,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import lombok.RequiredArgsConstructor;
+
 @RestController 
 @RequestMapping("/api/product")
+@RequiredArgsConstructor    
 public class GetProductByIdController {
     
     private GetProductByIdHandler handler;
-
-    public GetProductByIdController(GetProductByIdHandler handler) {
-        this.handler = handler;
-    }
 
     @GetMapping("/{id}")
     public ResponseEntity<GetProductByIdResponse> getById(@PathVariable Long id){
