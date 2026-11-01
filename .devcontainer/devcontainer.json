@@ -13,7 +13,10 @@
     }
   },
   "forwardPorts": [8080],
-  "shutdownAction": "stopContainer"
+  "shutdownAction": "stopContainer",
+   "runArgs": [
+    "--add-host=host.docker.internal:host-gateway"
+  ]
 }
 // {
 //   "name": "Java Spring Boot Lab",
