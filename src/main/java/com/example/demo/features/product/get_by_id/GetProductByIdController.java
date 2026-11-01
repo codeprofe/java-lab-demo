@@ -16,7 +16,7 @@ public class GetProductByIdController {
         this.handler = handler;
     }
 
-    @GetMapping 
+    @GetMapping("/{id}")
     public ResponseEntity<GetProductByIdResponse> getById(@PathVariable Long id){
          return handler.handle(id)
                 .map(GetProductByIdResponse::fromEntity)
