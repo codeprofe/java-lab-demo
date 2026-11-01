@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.example.demo.features.product.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,8 +18,7 @@ public class Producto{
 
     public Producto(){}
 
-    public Producto(Long id, String titulo, Double precio){
-        this.id = id;
+    public Producto(String titulo, Double precio){
         this.titulo = titulo;
         this.precio = precio;
     }
